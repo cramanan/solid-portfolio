@@ -1,6 +1,14 @@
 @font-face {
     font-family: "Asap";
-    src: url("./assets/fonts/Asap.ttf") format("truetype");
+    src: url("./assets/fonts/Asap-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "Asap";
+    src: url("./assets/fonts/Asap-Bold.ttf") format("truetype");
+    font-weight: bold;
     font-style: normal;
     font-display: fallback;
 }
@@ -11,4 +19,8 @@
 
 .dark {
     color-scheme: dark;
+}
+
+:root {
+    scroll-behavior: smooth;
 }

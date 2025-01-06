@@ -4,4 +4,5 @@ export const dict = {
     About: "About",
     Projects: "Projects",
     FullstackDev: "Full-Stack Developer",
+    copyrights: "All rights reserved",
 };

@@ -1,5 +1,5 @@
 import { createSignal, For } from "solid-js";
-import LocaleSwitcher from "./LocaleSwitcher";
+import LocaleSelect from "./LocaleSelect";
 import ThemeToggle from "./ThemeToggle";
 import { useAppState } from "~/AppContext";
 import X from "./icons/X";
@@ -14,9 +14,8 @@ const navigation = [
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = createSignal(false);
     const { t } = useAppState();
-
     return (
-        <header class=" fixed w-screen z-10 bg-white text-black dark:bg-black dark:text-white shadow-sm font-asap">
+        <header class=" bg-white text-black dark:bg-black dark:text-white shadow-sm font-asap">
             <nav
                 class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
                 aria-label="Global"
@@ -51,9 +50,10 @@ export default function Header() {
                 </nav>
 
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-3 items-center">
-                    <LocaleSwitcher />
+                    <LocaleSelect />
                     <ThemeToggle />
                     <a
+                        onClick={() => setMobileMenuOpen(false)}
                         class="outline outline-2 p-1 rounded-lg"
                         href="/#contact"
                     >
@@ -71,7 +71,11 @@ export default function Header() {
                 <div class="fixed inset-0 z-50"></div>
                 <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div class="flex items-center justify-between">
-                        <a href="/" class="-m-1.5 p-1.5">
+                        <a
+                            href="/"
+                            class="-m-1.5 p-1.5"
+                            onClick={() => setMobileMenuOpen(false)}
+                        >
                             <span class="sr-only">Cyril Ram.</span>
                             <span class="text-2xl font-bold">Cyril Ram.</span>
                         </a>
@@ -87,19 +91,29 @@ export default function Header() {
                     <div class="mt-6 flow-root">
                         <div class="-my-6 divide-y divide-gray-500/10">
                             <div class="space-y-2 py-6">
-                                {navigation.map((item) => (
-                                    <a
-                                        href={item.href}
-                                        class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7"
-                                    >
-                                        {t(item.name)}
-                                    </a>
-                                ))}
+                                <For each={navigation}>
+                                    {(item) => (
+                                        <a
+                                            onClick={() =>
+                                                setMobileMenuOpen(false)
+                                            }
+                                            href={item.href}
+                                            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7"
+                                        >
+                                            {t(item.name)}
+                                        </a>
+                                    )}
+                                </For>
                             </div>
                             <div class="flex gap-3 py-6">
-                                <LocaleSwitcher />
+                                <LocaleSelect />
                                 <ThemeToggle />
-                                <a href="/#contact">Contact Me</a>
+                                <a
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    href="/#contact"
+                                >
+                                    Contact Me
+                                </a>
                             </div>
                         </div>
                     </div>
