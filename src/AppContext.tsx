@@ -6,7 +6,6 @@ import {
     createContext,
     createEffect,
     createResource,
-    onMount,
     startTransition,
     useContext,
 } from "solid-js";
@@ -128,22 +127,18 @@ export const AppContextProvider: ParentComponent = (props) => {
         initialValue: fr_flat_dict,
     });
 
-    const t = i18n.translator(dict, i18n.resolveTemplate);
+    const t = i18n.translator(dict);
 
     const state: AppState = {
         locale,
         setLocale(value) {
-            void startTransition(() => {
-                set("locale", value);
-            });
+            void startTransition(() => set("locale", value));
         },
         t,
 
         isDark,
         setDark(value) {
-            void startTransition(() => {
-                set("dark", value);
-            });
+            void startTransition(() => set("dark", value));
         },
     };
 
@@ -155,12 +150,10 @@ export const AppContextProvider: ParentComponent = (props) => {
     });
 
     return (
-        <Suspense>
-            <AppContext.Provider value={state}>
-                <Title>{t("title")}</Title>
-                <Meta name="lang" lang={locale()} />
-                {props.children}
-            </AppContext.Provider>
-        </Suspense>
+        <AppContext.Provider value={state}>
+            <Title>{t("title")}</Title>
+            <Meta name="lang" lang={locale()} />
+            <Suspense>{props.children}</Suspense>
+        </AppContext.Provider>
     );
 };
