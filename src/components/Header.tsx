@@ -2,8 +2,8 @@ import { createSignal, For } from "solid-js";
 import LocaleSelect from "./LocaleSelect";
 import ThemeToggle from "./ThemeToggle";
 import { useAppState } from "~/AppContext";
-import X from "./icons/X";
-import Menu from "./icons/Menu";
+import Menu from "lucide-solid/icons/menu";
+import X from "lucide-solid/icons/menu";
 
 const navigation = [
     { name: "Home", href: "/" },
@@ -15,7 +15,7 @@ export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = createSignal(false);
     const { t } = useAppState();
     return (
-        <header class=" bg-white text-black dark:bg-black dark:text-white shadow-sm font-asap">
+        <header class="fixed w-screen z-10 bg-white text-black dark:bg-black dark:text-white shadow-sm font-asap">
             <nav
                 class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
                 aria-label="Global"
@@ -36,13 +36,10 @@ export default function Header() {
                         <Menu class="h-6 w-6" aria-hidden="true" />
                     </button>
                 </div>
-                <nav class="hidden lg:flex lg:gap-x-12">
+                <nav class="hidden lg:flex lg:gap-x-24 italic">
                     <For each={navigation}>
                         {(item) => (
-                            <a
-                                href={item.href}
-                                class="text-xl font-semibold leading-6 "
-                            >
+                            <a href={item.href} class="text-xl leading-6 ">
                                 {t(item.name)}
                             </a>
                         )}
@@ -57,7 +54,7 @@ export default function Header() {
                         class="outline outline-2 p-1 rounded-lg"
                         href="/#contact"
                     >
-                        Contact me
+                        {t("ContactMe")}
                     </a>
                 </div>
             </nav>
@@ -98,7 +95,7 @@ export default function Header() {
                                                 setMobileMenuOpen(false)
                                             }
                                             href={item.href}
-                                            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7"
+                                            class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7"
                                         >
                                             {t(item.name)}
                                         </a>
@@ -112,7 +109,7 @@ export default function Header() {
                                     onClick={() => setMobileMenuOpen(false)}
                                     href="/#contact"
                                 >
-                                    Contact Me
+                                    {t("ContactMe")}
                                 </a>
                             </div>
                         </div>

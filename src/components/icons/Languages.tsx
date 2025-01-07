@@ -1,4 +1,4 @@
-export default function Language(props: { class: string }) {
+export default function Languages(props: { class: string }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
