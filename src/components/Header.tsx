@@ -6,7 +6,6 @@ import Menu from "lucide-solid/icons/menu";
 import X from "lucide-solid/icons/menu";
 
 const navigation = [
-    { name: "Home", href: "/" },
     { name: "About", href: "/#about" },
     { name: "Projects", href: "/#projects" },
 ] as const;

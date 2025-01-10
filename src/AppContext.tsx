@@ -113,6 +113,7 @@ export const AppContextProvider: ParentComponent = (props) => {
     const [settings, set] = storage.makePersisted(
         createStore(initialSettings()),
         {
+            name: "settings",
             storageOptions: cookieOptions,
             storage: storage.cookieStorage,
             deserialize: (value) => deserializeSettings(value),
