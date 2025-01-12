@@ -14,7 +14,7 @@ export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = createSignal(false);
     const { t } = useAppState();
     return (
-        <header class="fixed w-screen z-10 bg-white text-black dark:bg-black dark:text-white shadow-sm font-asap">
+        <header class="fixed w-screen z-10 font-asap">
             <nav
                 class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
                 aria-label="Global"

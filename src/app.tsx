@@ -10,6 +10,7 @@ export default function App() {
     return (
         <MetaProvider>
             <Router
+                explicitLinks
                 root={(props) => (
                     <AppContextProvider>
                         <Header />
