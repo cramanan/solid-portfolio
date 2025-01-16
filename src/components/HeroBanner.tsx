@@ -1,5 +1,6 @@
 import { For } from "solid-js";
 import { useAppState } from "~/AppContext";
+import picture from "~/assets/images/picture.webp";
 
 const links = [
     {
@@ -17,9 +18,9 @@ const links = [
 export default function HeroBanner() {
     const { t } = useAppState();
     return (
-        <section class="relative bg-gradient-to-r from-purple-600 to-blue-600 text-white">
-            <div class="absolute inset-0 bg-black opacity-50"></div>
-            <div class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+        <section class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+            {/* <div class="absolute inset-0 bg-black opacity-50"></div> */}
+            <div class="flex flex-col-reverse items-center lg:flex-row">
                 <div class="max-w-xl text-center sm:text-left">
                     <h1 class="text-3xl font-extrabold sm:text-5xl">
                         Cyril Ram.
@@ -35,7 +36,7 @@ export default function HeroBanner() {
                         Cum eius quo sit iste labore libero molestiae.
                     </p>
 
-                    <ul class="mt-8 flex flex-wrap gap-4 text-center">
+                    {/* <ul class="mt-8 flex flex-wrap gap-4 text-center">
                         <For each={links}>
                             {(item) => (
                                 <li>
@@ -53,7 +54,14 @@ export default function HeroBanner() {
                                 </li>
                             )}
                         </For>
-                    </ul>
+                    </ul> */}
+                </div>
+                <div>
+                    <img
+                        src={picture}
+                        alt="Picture of Cyril Ram."
+                        class="w-52 h-52 rounded-full border my-10 lg:w-80 lg:h-80"
+                    />
                 </div>
             </div>
         </section>
