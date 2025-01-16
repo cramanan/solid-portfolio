@@ -1,5 +1,5 @@
 export const dict = {
-    title: "Cyril Ram's Portfolio",
+    title: "Cyril Ram | Full-Stack Developer",
     Home: "Home",
     About: "About",
     Projects: "Projects",

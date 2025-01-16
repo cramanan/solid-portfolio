@@ -1,5 +1,5 @@
 export const dict = {
-    title: "Portfolio de Cyril Ram.",
+    title: "Cyril Ram. | Développeur Full-Stack",
     Home: "Accueil",
     About: "À Propos",
     Projects: "Projets",

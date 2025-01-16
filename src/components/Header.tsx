@@ -3,7 +3,7 @@ import LocaleSelect from "./LocaleSelect";
 import ThemeToggle from "./ThemeToggle";
 import { useAppState } from "~/AppContext";
 import Menu from "lucide-solid/icons/menu";
-import X from "lucide-solid/icons/menu";
+import X from "lucide-solid/icons/x";
 
 const navigation = [
     { name: "About", href: "/#about" },
