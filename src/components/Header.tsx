@@ -14,17 +14,17 @@ export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = createSignal(false);
     const { t } = useAppState();
     return (
-        <header class="fixed w-screen z-10 font-asap">
+        <header class="font-asap fixed z-10 w-screen saturate-100 backdrop-blur-[5px]">
             <nav
-                class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+                class="mx-auto flex max-w-7xl items-center justify-end lg:justify-between p-3 lg:px-8"
                 aria-label="Global"
             >
-                <div class="flex lg:flex-1">
+                {/* <div class="flex lg:flex-1">
                     <a href="/" class="-m-1.5 p-1.5">
                         <span class="sr-only">Cyril Ram.</span>
                         <span class="text-2xl font-bold">Cyril Ram.</span>
                     </a>
-                </div>
+                </div> */}
                 <div class="flex lg:hidden">
                     <button
                         type="button"
@@ -35,22 +35,22 @@ export default function Header() {
                         <Menu class="h-6 w-6" aria-hidden="true" />
                     </button>
                 </div>
-                <nav class="hidden lg:flex lg:gap-x-24 italic">
+                <nav class="hidden italic lg:flex lg:gap-x-24">
                     <For each={navigation}>
                         {(item) => (
-                            <a href={item.href} class="text-xl leading-6 ">
+                            <a href={item.href} class="text-xl leading-6">
                                 {t(item.name)}
                             </a>
                         )}
                     </For>
                 </nav>
 
-                <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-3 items-center">
+                <div class="hidden items-center lg:flex lg:flex-1 lg:justify-end lg:gap-3">
                     <LocaleSelect />
                     <ThemeToggle />
                     <a
                         onClick={() => setMobileMenuOpen(false)}
-                        class="outline outline-2 p-1 rounded-lg"
+                        class="rounded-lg p-1 outline-2"
                         href="/#contact"
                     >
                         {t("ContactMe")}
@@ -64,8 +64,8 @@ export default function Header() {
                 aria-modal="true"
             >
                 {/* Background backdrop, show/hide based on slide-over state. */}
-                <div class="fixed inset-0 z-50"></div>
-                <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto backdrop-blur-sm px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                {/* <div class="fixed inset-0 z-50"></div> */}
+                <div class="fixed inset-y-0 right-0 z-50 w-full p-3 backdrop-blur-sm sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div class="flex items-center justify-between">
                         <a
                             href="/"

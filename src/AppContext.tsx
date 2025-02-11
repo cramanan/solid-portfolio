@@ -12,7 +12,7 @@ import {
 import { createStore } from "solid-js/store";
 import { Meta, Title } from "@solidjs/meta";
 
-// en dictionary is loaded by default
+// fr dictionary is loaded by default
 import { dict as fr_dict } from "~/i18n/fr";
 
 type RawDictionary = typeof fr_dict;
@@ -31,7 +31,7 @@ const raw_dict_map: Record<
     Locale,
     () => Promise<{ dict: DeepPartial<RawDictionary> }>
 > = {
-    fr: () => null as any, // en is loaded by default
+    fr: () => null as any, // fr is loaded by default
     en: () => import("~/i18n/en"),
 };
 
