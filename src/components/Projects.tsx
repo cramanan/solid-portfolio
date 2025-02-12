@@ -33,7 +33,7 @@ export default function Projects() {
     return (
         <section class="h-screen py-12" id="projects">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-8 dark:text-white">
+                <h2 class="text-4xl font-bold text-center mb-8 dark:text-white">
                     {t("Projects")}
                 </h2>
                 <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

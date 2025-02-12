@@ -1,4 +1,4 @@
-import { createSignal, For } from "solid-js";
+import { createSignal, For, Show } from "solid-js";
 import LocaleSelect from "./LocaleSelect";
 import ThemeToggle from "./ThemeToggle";
 import { useAppState } from "~/AppContext";
@@ -6,7 +6,7 @@ import Menu from "lucide-solid/icons/menu";
 import X from "lucide-solid/icons/x";
 
 const navigation = [
-    { name: "About", href: "/#about" },
+    { name: "Home", href: "/" },
     { name: "Projects", href: "/#projects" },
 ] as const;
 
@@ -14,17 +14,11 @@ export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = createSignal(false);
     const { t } = useAppState();
     return (
-        <header class="font-asap fixed z-10 w-screen saturate-100 backdrop-blur-[5px]">
+        <header class="fixed z-10 w-screen sm:saturate-100 sm:backdrop-blur-[5px] bg-primary">
             <nav
                 class="mx-auto flex max-w-7xl items-center justify-end lg:justify-between p-3 lg:px-8"
                 aria-label="Global"
             >
-                {/* <div class="flex lg:flex-1">
-                    <a href="/" class="-m-1.5 p-1.5">
-                        <span class="sr-only">Cyril Ram.</span>
-                        <span class="text-2xl font-bold">Cyril Ram.</span>
-                    </a>
-                </div> */}
                 <div class="flex lg:hidden">
                     <button
                         type="button"
@@ -35,7 +29,7 @@ export default function Header() {
                         <Menu class="h-6 w-6" aria-hidden="true" />
                     </button>
                 </div>
-                <nav class="hidden italic lg:flex lg:gap-x-24">
+                <nav class="hidden italic lg:flex lg:gap-x-12">
                     <For each={navigation}>
                         {(item) => (
                             <a href={item.href} class="text-xl leading-6">
@@ -58,14 +52,12 @@ export default function Header() {
                 </div>
             </nav>
             {/* Mobile menu, show/hide based on menu open state. */}
-            <div
-                class={`lg:hidden ${mobileMenuOpen() ? "" : "hidden"}`}
-                role="dialog"
-                aria-modal="true"
-            >
-                {/* Background backdrop, show/hide based on slide-over state. */}
-                {/* <div class="fixed inset-0 z-50"></div> */}
-                <div class="fixed inset-y-0 right-0 z-50 w-full p-3 backdrop-blur-sm sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <Show when={mobileMenuOpen()}>
+                <div
+                    role="dialog"
+                    aria-modal="true"
+                    class="fixed inset-y-0 right-0 z-50 w-full p-3 backdrop-blur-sm sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+                >
                     <div class="flex items-center justify-between">
                         <a
                             href="/"
@@ -86,7 +78,7 @@ export default function Header() {
                     </div>
                     <div class="mt-6 flow-root">
                         <div class="-my-6 divide-y divide-gray-500/10">
-                            <div class="space-y-2 py-6">
+                            <div class="py-6">
                                 <For each={navigation}>
                                     {(item) => (
                                         <a
@@ -94,7 +86,7 @@ export default function Header() {
                                                 setMobileMenuOpen(false)
                                             }
                                             href={item.href}
-                                            class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7"
+                                            class="block rounded-lg px-3 py-2 text-base leading-7"
                                         >
                                             {t(item.name)}
                                         </a>
@@ -114,7 +106,7 @@ export default function Header() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Show>
         </header>
     );
 }
