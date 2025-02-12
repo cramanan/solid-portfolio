@@ -10,11 +10,11 @@ export default function NotFound() {
             <h1 class="text-2xl lg:text-4xl font-bold mb-4">
                 404 - {t("PageNotFound")}
             </h1>
-            <p class="text-xl mb-8 text-center">
+            {/* <p class="text-xl mb-8 text-center">
                 Oops! It seems like you've ventured into uncharted territory.
-            </p>
+            </p> */}
             <a href="/">
-                <div class="flex items-center space-x-2">
+                <div class="flex items-center gap-x-2">
                     <Home class="w-6 h-6" />
                     <span class="text-lg">{t("ReturnHome")}</span>
                 </div>
