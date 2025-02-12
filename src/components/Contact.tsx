@@ -1,9 +1,24 @@
 import Mail from "lucide-solid/icons/mail";
 import MapPin from "lucide-solid/icons/map-pin";
+import { For } from "solid-js";
+import LinkedIn from "./icons/LinkedIn";
+import Instagram from "./icons/Instagram";
+import { useAppState } from "~/AppContext";
 
-const email = "";
+const email = "contact@example.com";
+const socials = [
+    {
+        href: "#",
+        Icon: LinkedIn,
+    },
+    {
+        href: "#",
+        Icon: Instagram,
+    },
+];
 
 export default function Contact() {
+    const { t } = useAppState();
     return (
         <section id="contact" class="py-16">
             <div class="container mx-auto px-4">
@@ -17,15 +32,8 @@ export default function Contact() {
                                     class="flex items-center hover:text-blue-500 hover:fill-blue-500"
                                 >
                                     <Mail class="mr-2" size={20} />
-                                    contact@example.com
+                                    {email}
                                 </a>
-                                {/* <a
-                                    href={`tel:${tel}`}
-                                    class="flex items-center hover:text-blue-500 hover:fill-blue-500"
-                                >
-                                    <Phone class="mr-2" size={20} />
-                                    +1 (234) 567-890
-                                </a> */}
                                 <a
                                     href="https://www.google.com/maps/place/Rouen"
                                     target="_blank"
@@ -39,32 +47,20 @@ export default function Contact() {
                     </div>
                     <div class="w-full md:w-1/2 px-4">
                         <div class="bg-white rounded-lg shadow-md p-6">
-                            <h4 class="text-lg font-semibold mb-2">Socials </h4>
+                            <h4 class="text-lg font-semibold mb-2">
+                                {t("Socials")}
+                            </h4>
                             <div class="flex space-x-4">
-                                <a
-                                    href="#"
-                                    class="text-gray-600 hover:text-blue-500"
-                                >
-                                    <Mail size={24} />
-                                </a>
-                                <a
-                                    href="#"
-                                    class="text-gray-600 hover:text-blue-500"
-                                >
-                                    <Mail size={24} />
-                                </a>
-                                <a
-                                    href="#"
-                                    class="text-gray-600 hover:text-blue-500"
-                                >
-                                    <Mail size={24} />
-                                </a>
-                                <a
-                                    href="#"
-                                    class="text-gray-600 hover:text-blue-500"
-                                >
-                                    <Mail size={24} />
-                                </a>
+                                <For each={socials}>
+                                    {(item) => (
+                                        <a
+                                            href={item.href}
+                                            class="text-gray-600 hover:text-blue-500 hover:fill-blue-500"
+                                        >
+                                            <item.Icon width={24} />
+                                        </a>
+                                    )}
+                                </For>
                             </div>
                         </div>
                     </div>
