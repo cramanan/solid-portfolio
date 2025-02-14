@@ -2,6 +2,7 @@ import { For } from "solid-js";
 import { useAppState } from "~/AppContext";
 import LinkedIn from "./icons/LinkedIn";
 import Github from "./icons/Github";
+import { Link } from "@solidjs/meta";
 
 const links = [
     {
@@ -17,41 +18,46 @@ const links = [
 export default function HeroBanner() {
     const { t } = useAppState();
     return (
-        <section class="relative mx-auto max-w-screen-xl px-4 lg:flex lg:h-screen lg:items-center lg:px-8">
-            {/* <div class="absolute inset-0 bg-black opacity-50"></div> */}
-            <div class="flex flex-col-reverse items-center lg:flex-row w-full lg:justify-between">
-                <div class="max-w-xl text-center sm:text-left">
-                    <h1 class="text-3xl font-extrabold sm:text-5xl">
-                        Cyril Ram.
-                        <strong class="block font-extrabold">
-                            {t("FullstackDev")}
-                        </strong>
-                    </h1>
-                    {/* <p class="mt-4 max-w-lg sm:text-xl/relaxed">
-                        Crafting beautiful and functional web experiences.
-                        Bringing your ideas to life with code. Lorem ipsum dolor
-                        sit amet consectetur adipisicing elit. Cum eius quo sit
-                        iste labore libero molestiae.
-                    </p> */}
-                    <div class="mt-3 flex gap-4 justify-center sm:justify-start">
-                        <For each={links}>
-                            {(item) => (
-                                <a href={item.href} target="_blank">
-                                    <item.Icon
-                                        width={44}
-                                        class="fill-foreground"
-                                    />
-                                </a>
-                            )}
-                        </For>
+        <>
+            {/* in head */}
+            <Link
+                rel="preload"
+                as="image"
+                href="picture.webp"
+                fetchpriority="high"
+            />
+
+            {/* in body */}
+            <section class="relative mx-auto max-w-screen-xl px-4 lg:flex lg:h-screen lg:items-center lg:px-8">
+                {/* <div class="absolute inset-0 bg-black opacity-50"></div> */}
+                <div class="flex flex-col-reverse items-center lg:flex-row w-full lg:justify-between">
+                    <div class="max-w-xl text-center sm:text-left">
+                        <h1 class="text-3xl font-extrabold sm:text-5xl">
+                            Cyril Ram.
+                            <strong class="block font-extrabold">
+                                {t("FullstackDev")}
+                            </strong>
+                        </h1>
+                        <div class="mt-3 flex gap-4 justify-center sm:justify-start">
+                            <For each={links}>
+                                {(item) => (
+                                    <a href={item.href} target="_blank">
+                                        <item.Icon
+                                            width={44}
+                                            class="fill-foreground"
+                                        />
+                                    </a>
+                                )}
+                            </For>
+                        </div>
                     </div>
+                    <img
+                        src="picture.webp"
+                        alt="Picture of Cyril Ram."
+                        class="my-10 h-52 w-52 rounded-full border lg:h-96 lg:w-96"
+                    />
                 </div>
-                <img
-                    src="picture.webp"
-                    alt="Picture of Cyril Ram."
-                    class="my-10 h-52 w-52 rounded-full border lg:h-96 lg:w-96"
-                />
-            </div>
-        </section>
+            </section>
+        </>
     );
 }
