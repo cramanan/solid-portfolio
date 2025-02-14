@@ -6,13 +6,27 @@ import Instagram from "./icons/Instagram";
 import { useAppState } from "~/AppContext";
 
 const email = "contact@example.com";
+
+const informations = [
+    {
+        href: `mailto:${email}`,
+        label: email,
+        Icon: MapPin,
+    },
+    {
+        href: "https://www.google.com/maps/place/Rouen",
+        label: "76000 ROUEN, FRANCE",
+        Icon: Mail,
+    },
+];
+
 const socials = [
     {
-        href: "#",
+        href: "https://www.linkedin.com/in/cyrilram",
         Icon: LinkedIn,
     },
     {
-        href: "#",
+        href: "https://www.instagram.com/0cyrilram",
         Icon: Instagram,
     },
 ];
@@ -26,37 +40,34 @@ export default function Contact() {
                 <div class="flex flex-wrap -mx-4">
                     <div class="w-full md:w-1/2 px-4">
                         <div class="rounded-lg shadow-md p-6">
-                            <div class="space-y-4">
-                                <a
-                                    href={`mailto:${email}`}
-                                    class="flex items-center hover:text-blue-500 hover:fill-blue-500"
-                                >
-                                    <Mail class="mr-2" size={20} />
-                                    {email}
-                                </a>
-                                <a
-                                    href="https://www.google.com/maps/place/Rouen"
-                                    target="_blank"
-                                    class="flex items-center hover:text-blue-500 hover:fill-blue-500"
-                                >
-                                    <MapPin class="mr-2" size={20} />
-                                    76000 ROUEN, FRANCE
-                                </a>
+                            <h4 class="text-lg font-semibold mb-2">
+                                {t("Informations")}
+                            </h4>
+                            <div class="gap-y-2">
+                                <For each={informations}>
+                                    {(item) => (
+                                        <a
+                                            href={item.href}
+                                            target="_blank"
+                                            class="w-fit flex items-center"
+                                        >
+                                            <item.Icon class="mr-2" size={24} />
+                                            {item.label}
+                                        </a>
+                                    )}
+                                </For>
                             </div>
                         </div>
                     </div>
                     <div class="w-full md:w-1/2 px-4">
-                        <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="rounded-lg shadow-md p-6">
                             <h4 class="text-lg font-semibold mb-2">
                                 {t("Socials")}
                             </h4>
-                            <div class="flex space-x-4">
+                            <div class="flex gap-x-2">
                                 <For each={socials}>
                                     {(item) => (
-                                        <a
-                                            href={item.href}
-                                            class="text-gray-600 hover:text-blue-500 hover:fill-blue-500"
-                                        >
+                                        <a href={item.href} target="_blank">
                                             <item.Icon width={24} />
                                         </a>
                                     )}
