@@ -7,6 +7,7 @@ import X from "lucide-solid/icons/x";
 
 const navigation = [
     { name: "Home", href: "/" },
+    { name: "Skills", href: "/#skills" },
     { name: "Projects", href: "/#projects" },
 ] as const;
 
@@ -14,7 +15,7 @@ export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = createSignal(false);
     const { t } = useAppState();
     return (
-        <header class="fixed z-10 w-screen sm:saturate-100 sm:backdrop-blur-[5px] bg-primary">
+        <header class="fixed z-10 w-screen sm:saturate-100 sm:backdrop-blur-lg bg-primary">
             <nav
                 class="mx-auto flex max-w-7xl items-center justify-end lg:justify-between p-3 lg:px-8"
                 aria-label="Global"
