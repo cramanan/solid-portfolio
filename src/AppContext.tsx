@@ -10,7 +10,7 @@ import {
     useContext,
 } from "solid-js";
 import { createStore } from "solid-js/store";
-import { Meta, Title } from "@solidjs/meta";
+import { Meta, MetaProvider, Title } from "@solidjs/meta";
 
 // fr dictionary is loaded by default
 import { dict as fr_dict } from "~/i18n/fr";
@@ -18,6 +18,8 @@ import { dict as fr_dict } from "~/i18n/fr";
 type RawDictionary = typeof fr_dict;
 
 export type Locale = "en" | "fr";
+
+const initialLocale: Locale = "fr";
 
 /*
 for validating of other dictionaries have same keys as en dictionary
@@ -31,7 +33,7 @@ const raw_dict_map: Record<
     Locale,
     () => Promise<{ dict: DeepPartial<RawDictionary> }>
 > = {
-    fr: () => null as any, // fr is loaded by default
+    fr: () => import("~/i18n/fr"),
     en: () => import("~/i18n/en"),
 };
 
@@ -55,26 +57,14 @@ interface Settings {
     dark: boolean;
 }
 
-function initialLocale(): Locale {
-    let locale: Locale | undefined;
-
-    locale = toLocale(navigator.language.slice(0, 2));
-    if (locale) return locale;
-
-    locale = toLocale(navigator.language.toLocaleLowerCase());
-    if (locale) return locale;
-
-    return "fr";
-}
-
 function initialSettings(): Settings {
     return {
-        locale: initialLocale(),
+        locale: initialLocale,
         dark: false,
     };
 }
 
-function deserializeSettings(value: string): Settings {
+function deserialize(value: string): Settings {
     const parsed = JSON.parse(value) as unknown;
     if (!parsed || typeof parsed !== "object") return initialSettings();
 
@@ -83,7 +73,7 @@ function deserializeSettings(value: string): Settings {
             ("locale" in parsed &&
                 typeof parsed.locale === "string" &&
                 toLocale(parsed.locale)) ||
-            initialLocale(),
+            initialLocale,
         dark:
             "dark" in parsed && typeof parsed.dark === "boolean"
                 ? parsed.dark
@@ -106,17 +96,20 @@ export const useAppState = () => useContext(AppContext);
 
 export const AppContextProvider: ParentComponent = (props) => {
     const now = new Date();
-    const cookieOptions: storage.CookieOptions = {
-        expires: new Date(now.getFullYear() + 1, now.getMonth(), now.getDate()),
-    };
+    const expires = new Date(
+        now.getFullYear() + 1,
+        now.getMonth(),
+        now.getDate()
+    );
+    const storageOptions = { expires };
 
     const [settings, set] = storage.makePersisted(
         createStore(initialSettings()),
         {
             name: "settings",
-            storageOptions: cookieOptions,
+            storageOptions,
             storage: storage.cookieStorage,
-            deserialize: (value) => deserializeSettings(value),
+            deserialize,
         }
     );
 
@@ -145,16 +138,19 @@ export const AppContextProvider: ParentComponent = (props) => {
 
     createEffect(() => (document.documentElement.lang = settings.locale));
 
-    createEffect(() => {
-        if (settings.dark) document.documentElement.classList.add("dark");
-        else document.documentElement.classList.remove("dark");
-    });
+    createEffect(() =>
+        settings.dark
+            ? document.documentElement.classList.add("dark")
+            : document.documentElement.classList.remove("dark")
+    );
 
     return (
-        <AppContext.Provider value={state}>
-            <Title>{t("title")}</Title>
-            <Meta name="lang" lang={locale()} />
-            <Suspense>{props.children}</Suspense>
-        </AppContext.Provider>
+        <MetaProvider>
+            <AppContext.Provider value={state}>
+                <Title>{t("title")}</Title>
+                <Meta name="lang" lang={locale()} />
+                <Suspense>{props.children}</Suspense>
+            </AppContext.Provider>
+        </MetaProvider>
     );
 };
