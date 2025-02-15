@@ -4,6 +4,7 @@ import ThemeToggle from "./ThemeToggle";
 import { useAppState } from "~/AppContext";
 import Menu from "lucide-solid/icons/menu";
 import X from "lucide-solid/icons/x";
+import Phone from "lucide-solid/icons/phone";
 
 const navigation = [
     { name: "Home", href: "/" },
@@ -30,7 +31,7 @@ export default function Header() {
                         <Menu class="h-6 w-6" aria-hidden="true" />
                     </button>
                 </div>
-                <nav class="hidden italic lg:flex lg:gap-x-12">
+                <nav class="hidden lg:flex lg:gap-x-12">
                     <For each={navigation}>
                         {(item) => (
                             <a href={item.href} class="text-xl leading-6">
@@ -45,14 +46,14 @@ export default function Header() {
                     <ThemeToggle />
                     <a
                         onClick={() => setMobileMenuOpen(false)}
-                        class="rounded-lg p-1 outline-2"
+                        class="flex items-center gap-2 rounded-lg p-1 outline-2 text-lg font-medium px-2 py-1"
                         href="/#contact"
                     >
+                        <Phone class="h-6 w-6" width={24} />
                         {t("ContactMe")}
                     </a>
                 </div>
             </nav>
-            {/* Mobile menu, show/hide based on menu open state. */}
             <Show when={mobileMenuOpen()}>
                 <div
                     role="dialog"
