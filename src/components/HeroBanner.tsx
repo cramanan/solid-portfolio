@@ -1,18 +1,7 @@
-import { For } from "solid-js";
 import { useAppState } from "~/AppContext";
 import LinkedIn from "./icons/LinkedIn";
 import Github from "./icons/Github";
-
-const links = [
-    {
-        href: "https://github.com/cramanan",
-        Icon: Github,
-    },
-    {
-        href: "https://linkedin.com/in/cyrilram",
-        Icon: LinkedIn,
-    },
-];
+import FileUser from "lucide-solid/icons/file-user";
 
 export default function HeroBanner() {
     const { t } = useAppState();
@@ -27,16 +16,17 @@ export default function HeroBanner() {
                         </strong>
                     </h1>
                     <div class="mt-3 flex gap-4 justify-center sm:justify-start">
-                        <For each={links}>
-                            {(item) => (
-                                <a href={item.href} target="_blank">
-                                    <item.Icon
-                                        width={44}
-                                        class="fill-foreground"
-                                    />
-                                </a>
-                            )}
-                        </For>
+                        <a href="https://github.com/cramanan" target="_blank">
+                            <Github width={44} />
+                        </a>
+                        <a
+                            href="#"
+                            target="_blank"
+                            class="flex items-center gap-2 border rounded-lg px-4 py-2 font-semibold text-xl"
+                        >
+                            <FileUser />
+                            <span>{t("Resume")}</span>
+                        </a>
                     </div>
                 </div>
                 <img
