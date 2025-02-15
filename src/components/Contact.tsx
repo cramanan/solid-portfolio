@@ -36,20 +36,22 @@ export default function Contact() {
     return (
         <section id="contact" class="py-16">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-8">Contact</h2>
+                <h2 class="text-4xl font-bold text-center lg:text-start mb-8">
+                    Contact
+                </h2>
                 <div class="flex flex-wrap -mx-4">
                     <div class="w-full md:w-1/2 px-4">
                         <div class="rounded-lg shadow-md p-6">
-                            <h4 class="text-lg font-semibold mb-2">
+                            <h3 class="text-lg font-semibold mb-2">
                                 {t("Informations")}
-                            </h4>
+                            </h3>
                             <div class="gap-y-2">
                                 <For each={informations}>
                                     {(item) => (
                                         <a
                                             href={item.href}
                                             target="_blank"
-                                            class="w-fit flex items-center"
+                                            class="w-fit flex items-center underline font-semibold hover:text-blue-600"
                                         >
                                             <item.Icon class="mr-2" size={24} />
                                             {item.label}
@@ -61,9 +63,9 @@ export default function Contact() {
                     </div>
                     <div class="w-full md:w-1/2 px-4">
                         <div class="rounded-lg shadow-md p-6">
-                            <h4 class="text-lg font-semibold mb-2">
+                            <h3 class="text-lg font-semibold mb-2">
                                 {t("Socials")}
-                            </h4>
+                            </h3>
                             <div class="flex gap-x-2">
                                 <For each={socials}>
                                     {(item) => (
