@@ -1,9 +1,11 @@
 export const dict = {
     title: "Cyril Ram. | Développeur Full-Stack",
+    description: "Portfolio de Cyril Ram.",
     Home: "Accueil",
     Skills: "Compétences",
     Projects: "Projets",
     FullstackDev: "Développeur Full-Stack",
+    Resume: "CV",
     ContactMe: "Me contacter",
     Informations: "Informations personelles",
     Socials: "Mes réseaux",
