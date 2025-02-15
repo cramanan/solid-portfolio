@@ -149,6 +149,14 @@ export const AppContextProvider: ParentComponent = (props) => {
             <AppContext.Provider value={state}>
                 <Title>{t("title")}</Title>
                 <Meta name="lang" lang={locale()} />
+                <Meta name="author" content="Cyril Ramananjaona" />
+                <Meta name="description" content={t("description")} />
+                <Meta
+                    name="keywords"
+                    content="portfolio, dev, HTML, CSS, JavaScript, JS"
+                />
+                <Meta name="generator" content="vite" />
+
                 <Suspense>{props.children}</Suspense>
             </AppContext.Provider>
         </MetaProvider>
