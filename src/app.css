@@ -6,6 +6,33 @@
     color-scheme: dark;
 }
 
+body {
+    background-image: -webkit-radial-gradient(#ddd 1px, transparent 0),
+        -webkit-radial-gradient(#ddd 1px, transparent 0);
+    background-image: -moz-radial-gradient(#ddd 1px, transparent 0),
+        -moz-radial-gradient(#ddd 1px, transparent 0);
+    background-image: -o-radial-gradient(#ddd 1px, transparent 0),
+        -o-radial-gradient(#ddd 1px, transparent 0);
+    background-image: radial-gradient(#ddd 1px, transparent 0),
+        radial-gradient(#ddd 1px, transparent 0);
+    background-position: 0 0, 25px 25px;
+    -webkit-background-size: 50px 50px;
+    -moz-background-size: 50px 50px;
+    -o-background-size: 50px 50px;
+    background-size: 50px 50px;
+}
+
+.dark body {
+    background-image: -webkit-radial-gradient(#333 1px, transparent 0),
+        -webkit-radial-gradient(#333 1px, transparent 0);
+    background-image: -moz-radial-gradient(#333 1px, transparent 0),
+        -moz-radial-gradient(#333 1px, transparent 0);
+    background-image: -o-radial-gradient(#333 1px, transparent 0),
+        -o-radial-gradient(#333 1px, transparent 0);
+    background-image: radial-gradient(#333 1px, transparent 0),
+        radial-gradient(#333 1px, transparent 0);
+}
+
 :root {
     scroll-behavior: smooth;
 }

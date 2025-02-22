@@ -3,13 +3,13 @@ import { JSX } from "solid-js";
 export default function Golang(props: JSX.SvgSVGAttributes<SVGSVGElement>) {
     return (
         <svg
-            height="78"
             viewBox="0 0 207 78"
             width="207"
             xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
+            fill="#00acd7"
             {...props}
         >
+            <title>Golang</title>
             <g fill-rule="evenodd">
                 <path d="m16.2 24.1c-.4 0-.5-.2-.3-.5l2.1-2.7c.2-.3.7-.5 1.1-.5h35.7c.4 0 .5.3.3.6l-1.7 2.6c-.2.3-.7.6-1 .6z" />
                 <path d="m1.1 33.3c-.4 0-.5-.2-.3-.5l2.1-2.7c.2-.3.7-.5 1.1-.5h45.6c.4 0 .6.3.5.6l-.8 2.4c-.1.4-.5.6-.9.6z" />

@@ -3,14 +3,87 @@ import { JSX } from "solid-js";
 export default function Solid(props: JSX.SvgSVGAttributes<SVGSVGElement>) {
     return (
         <svg
-            role="img"
-            viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
+            viewBox="0 0 166 155.3"
             {...props}
         >
-            <title>Solid</title>
-            <path d="M11.558.788A9.082 9.082 0 0 0 9.776.99l-.453.15c-.906.303-1.656.755-2.1 1.348l-.301.452-2.035 3.528c.426-.387.974-.698 1.643-.894h.001l.613-.154h.001a8.82 8.82 0 0 1 1.777-.206c2.916-.053 6.033 1.148 8.423 2.36 2.317 1.175 3.888 2.32 3.987 2.39L24 5.518c-.082-.06-1.66-1.21-3.991-2.386-2.393-1.206-5.521-2.396-8.45-2.343zM8.924 5.366a8.634 8.634 0 0 0-1.745.203l-.606.151c-1.278.376-2.095 1.16-2.43 2.108-.334.948-.188 2.065.487 3.116.33.43.747.813 1.216 1.147L12.328 10h.001a6.943 6.943 0 0 1 6.013 1.013l2.844-.963c-.17-.124-1.663-1.2-3.91-2.34-2.379-1.206-5.479-2.396-8.352-2.344zm5.435 4.497a6.791 6.791 0 0 0-1.984.283L2.94 13.189 0 18.334l9.276-2.992a6.945 6.945 0 0 1 7.408 2.314v.001c.695.903.89 1.906.66 2.808l2.572-4.63c.595-1.041.45-2.225-.302-3.429a6.792 6.792 0 0 0-5.255-2.543zm-3.031 5.341a6.787 6.787 0 0 0-2.006.283L.008 18.492c.175.131 2.02 1.498 4.687 2.768 2.797 1.332 6.37 2.467 9.468 1.712l.454-.152h.002c1.278-.376 2.134-1.162 2.487-2.09.353-.93.207-2.004-.541-2.978a6.791 6.791 0 0 0-5.237-2.548z" />
+            <title>Solid JS</title>
+            <defs>
+                <linearGradient
+                    id="a"
+                    gradientUnits="userSpaceOnUse"
+                    x1="27.5"
+                    y1="3"
+                    x2="152"
+                    y2="63.5"
+                >
+                    <stop offset=".1" stop-color="#76b3e1" />
+                    <stop offset=".3" stop-color="#dcf2fd" />
+                    <stop offset="1" stop-color="#76b3e1" />
+                </linearGradient>
+                <linearGradient
+                    id="b"
+                    gradientUnits="userSpaceOnUse"
+                    x1="95.8"
+                    y1="32.6"
+                    x2="74"
+                    y2="105.2"
+                >
+                    <stop offset="0" stop-color="#76b3e1" />
+                    <stop offset=".5" stop-color="#4377bb" />
+                    <stop offset="1" stop-color="#1f3b77" />
+                </linearGradient>
+                <linearGradient
+                    id="c"
+                    gradientUnits="userSpaceOnUse"
+                    x1="18.4"
+                    y1="64.2"
+                    x2="144.3"
+                    y2="149.8"
+                >
+                    <stop offset="0" stop-color="#315aa9" />
+                    <stop offset=".5" stop-color="#518ac8" />
+                    <stop offset="1" stop-color="#315aa9" />
+                </linearGradient>
+                <linearGradient
+                    id="d"
+                    gradientUnits="userSpaceOnUse"
+                    x1="75.2"
+                    y1="74.5"
+                    x2="24.4"
+                    y2="260.8"
+                >
+                    <stop offset="0" stop-color="#4377bb" />
+                    <stop offset=".5" stop-color="#1a336b" />
+                    <stop offset="1" stop-color="#1a336b" />
+                </linearGradient>
+            </defs>
+            <path
+                d="M163 35S110-4 69 5l-3 1c-6 2-11 5-14 9l-2 3-15 26 26 5c11 7 25 10 38 7l46 9 18-30z"
+                fill="#76b3e1"
+            />
+            <path
+                d="M163 35S110-4 69 5l-3 1c-6 2-11 5-14 9l-2 3-15 26 26 5c11 7 25 10 38 7l46 9 18-30z"
+                opacity=".3"
+                fill="url(#a)"
+            />
+            <path
+                d="M52 35l-4 1c-17 5-22 21-13 35 10 13 31 20 48 15l62-21S92 26 52 35z"
+                fill="#518ac8"
+            />
+            <path
+                d="M52 35l-4 1c-17 5-22 21-13 35 10 13 31 20 48 15l62-21S92 26 52 35z"
+                opacity=".3"
+                fill="url(#b)"
+            />
+            <path
+                d="M134 80a45 45 0 00-48-15L24 85 4 120l112 19 20-36c4-7 3-15-2-23z"
+                fill="url(#c)"
+            />
+            <path
+                d="M114 115a45 45 0 00-48-15L4 120s53 40 94 30l3-1c17-5 23-21 13-34z"
+                fill="url(#d)"
+            />
         </svg>
     );
 }

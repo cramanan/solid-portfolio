@@ -11,12 +11,12 @@ const informations = [
     {
         href: `mailto:${email}`,
         label: email,
-        Icon: MapPin,
+        Icon: Mail,
     },
     {
         href: "https://www.google.com/maps/place/Rouen",
         label: "76000 ROUEN, FRANCE",
-        Icon: Mail,
+        Icon: MapPin,
     },
 ];
 
