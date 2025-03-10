@@ -11,14 +11,14 @@ import Gauge from "./icons/Gauge";
 
 function Tabs() {
     return (
-        <div class="w-full h-full relative">
-            <div class="absolute rounded-sm border-[1.5px] w-[209px] h-full">
+        <div class="w-full h-full flex items-center justify-center">
+            <div class="rounded-sm border-[1.5px] w-[209px] h-full">
                 <div class="flex border-b-1 h-3 items-center justify-end gap-1 px-1">
                     <span class="h-2 w-2 border-1 rounded-full bg-green-400"></span>
                     <span class="h-2 w-2 border-1 rounded-full bg-yellow-400"></span>
                     <span class="h-2 w-2 border-1 rounded-full bg-red-400"></span>
                 </div>
-                <div class="p-1">
+                <div class="p-1 relative">
                     <div class="border w-10 h-10 mx-1.5"></div>
                 </div>
             </div>

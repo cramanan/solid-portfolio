@@ -16,9 +16,9 @@ export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = createSignal(false);
     const { t } = useAppState();
     return (
-        <header class="fixed z-10 w-screen sm:saturate-100 sm:backdrop-blur-lg bg-primary">
+        <header class="fixed z-10 w-screen sm:saturate-100 sm:backdrop-blur-lg shadow-[0_4px_6px_0px] shadow-current/50 select-none px-4 lg:px-20">
             <nav
-                class="mx-auto flex max-w-7xl items-center justify-end lg:justify-between p-3 lg:px-8"
+                class="flex items-center lg:justify-between py-3"
                 aria-label="Global"
             >
                 <div class="flex lg:hidden">
@@ -34,7 +34,7 @@ export default function Header() {
                 <nav class="hidden lg:flex lg:gap-x-12">
                     <For each={navigation}>
                         {(item) => (
-                            <a href={item.href} class="text-xl leading-6">
+                            <a href={item.href} class="text-3xl leading-6">
                                 {t(item.name)}
                             </a>
                         )}
