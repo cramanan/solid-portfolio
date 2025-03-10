@@ -6,6 +6,8 @@ export const dict = {
     Projects: "Projets",
     FullstackDev: "Développeur Full-Stack",
     Resume: "CV",
+    Precision: "Précision",
+    Efficiency: "Efficacité",
     ContactMe: "Me contacter",
     Informations: "Informations personelles",
     Socials: "Mes réseaux",

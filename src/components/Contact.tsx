@@ -23,10 +23,12 @@ const informations = [
 const socials = [
     {
         href: "https://www.linkedin.com/in/cyrilram",
+        label: "LinkedIn",
         Icon: LinkedIn,
     },
     {
         href: "https://www.instagram.com/0cyrilram",
+        label: "Instagram",
         Icon: Instagram,
     },
 ];
@@ -66,11 +68,16 @@ export default function Contact() {
                             <h3 class="text-lg font-semibold mb-2">
                                 {t("Socials")}
                             </h3>
-                            <div class="flex gap-x-2">
+                            <div class="flex flex-col gap-2">
                                 <For each={socials}>
                                     {(item) => (
-                                        <a href={item.href} target="_blank">
+                                        <a
+                                            href={item.href}
+                                            target="_blank"
+                                            class="flex gap-1"
+                                        >
                                             <item.Icon width={24} />
+                                            <span>{item.label}</span>
                                         </a>
                                     )}
                                 </For>

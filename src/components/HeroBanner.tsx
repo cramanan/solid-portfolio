@@ -31,7 +31,7 @@ export default function HeroBanner() {
                 <img
                     src="picture.webp"
                     alt="Picture of Cyril Ram."
-                    class="my-10 h-52 w-52 rounded-full border lg:h-96 lg:w-96"
+                    class="my-10 h-52 w-52 rounded-full border backdrop-blur-2xl lg:h-96 lg:w-96"
                 />
             </div>
         </section>
