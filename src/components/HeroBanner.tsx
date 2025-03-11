@@ -1,7 +1,7 @@
 import { useAppState } from "~/AppContext";
 import Github from "./icons/Github";
 import FileUser from "lucide-solid/icons/file-user";
-import wavingHand from "../assets/waving-hand.png";
+import wavingHand from "../assets/images/waving-hand.png";
 
 export default function HeroBanner() {
     const { t } = useAppState();
@@ -10,9 +10,14 @@ export default function HeroBanner() {
             <div class="flex flex-col-reverse items-center lg:flex-row w-full lg:justify-between">
                 <div class="text-center sm:text-left">
                     <div class="font-extrabold text-7xl">
-                        <div class="flex items-center gap-4">
+                        <div class="flex items-center gap-2">
                             <h1>Cyril Ram.</h1>
-                            <img src={wavingHand} alt="" width={60} />
+                            <img
+                                src={wavingHand}
+                                alt="A waving hand"
+                                width={60}
+                                class="animate-wave-initial hover:animate-wave select-none"
+                            />
                         </div>
                         <strong class="block font-extrabold">
                             {t("FullstackDev")}

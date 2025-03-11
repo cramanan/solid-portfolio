@@ -13,7 +13,7 @@ export default function NotFound() {
             <a href="/">
                 <div class="flex items-center gap-x-2">
                     <Home class="w-6 h-6" />
-                    <span class="text-lg">{t("ReturnHome")}</span>
+                    <span class="text-lg underline">{t("ReturnHome")}</span>
                 </div>
             </a>
         </div>

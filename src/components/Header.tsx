@@ -7,7 +7,7 @@ import X from "lucide-solid/icons/x";
 import Phone from "lucide-solid/icons/phone";
 
 const navigation = [
-    { name: "Home", href: "/" },
+    { name: "Home", href: "/#" },
     { name: "Skills", href: "/#skills" },
     { name: "Projects", href: "/#projects" },
 ] as const;
@@ -16,7 +16,7 @@ export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = createSignal(false);
     const { t } = useAppState();
     return (
-        <header class="fixed z-10 w-screen sm:saturate-100 sm:backdrop-blur-lg shadow-[0_4px_6px_0px] shadow-current/50 select-none px-4 lg:px-20">
+        <header class="fixed z-10 w-screen sm:saturate-100 sm:backdrop-blur-lg border-b [border-image:linear-gradient(90deg,#0000_30%,#c8c8c880_50%,#0000_70%)_700] select-none px-4 lg:px-20">
             <nav
                 class="flex items-center lg:justify-between py-3"
                 aria-label="Global"
@@ -34,7 +34,10 @@ export default function Header() {
                 <nav class="hidden lg:flex lg:gap-x-12">
                     <For each={navigation}>
                         {(item) => (
-                            <a href={item.href} class="text-3xl leading-6">
+                            <a
+                                href={item.href}
+                                class="text-3xl leading-6 hover:underline"
+                            >
                                 {t(item.name)}
                             </a>
                         )}

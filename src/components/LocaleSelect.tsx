@@ -11,10 +11,10 @@ export default function LocaleSwitcher() {
                 onChange={(e) => setLocale(e.currentTarget.value as Locale)}
             >
                 <option value="en" selected={locale() === "en"}>
-                    English
+                    🇺🇸 English
                 </option>
                 <option value="fr" selected={locale() === "fr"}>
-                    Français
+                    🇫🇷 Français
                 </option>
             </select>
         </div>

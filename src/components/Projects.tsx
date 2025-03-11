@@ -32,10 +32,7 @@ const projects = [
 export default function Projects() {
     const { t } = useAppState();
     return (
-        <section
-            class="lg:h-screen py-14 border-t [border-image:linear-gradient(90deg,#0000_30%,#c8c8c880_50%,#0000_70%)_200]"
-            id="projects"
-        >
+        <section class="lg:h-screen py-20" id="projects">
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center lg:text-start mb-8">
                     {t("Projects")}

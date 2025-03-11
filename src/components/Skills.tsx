@@ -53,7 +53,7 @@ const cards = [
 export default function Skills() {
     const { t } = useAppState();
     return (
-        <section class="lg:h-screen py-14" id="skills">
+        <section class="lg:h-screen py-20" id="skills">
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center lg:text-start mb-8">
                     {t("Skills")}
