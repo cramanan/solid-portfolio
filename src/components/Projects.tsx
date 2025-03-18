@@ -4,11 +4,12 @@ import Github from "./icons/Github";
 import Golang from "./icons/Golang";
 import React from "./icons/React";
 import JavaScript from "./icons/JavaScript";
+import SQLite from "./icons/SQLite";
 
 const projects = [
     {
-        title: "Social-Network",
-        techs: [Golang, React],
+        title: "Social-Network-01",
+        techs: [Golang, React, SQLite],
         description:
             "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, repudiandae aspernatur possimus unde ab aliquam consectetur sed excepturi doloremque ipsum ratione similique fugiat?",
         projectUrl: "https://github.com/cramanan/Social-Network-01",
@@ -33,7 +34,7 @@ export default function Projects() {
     const { t } = useAppState();
     return (
         <section class="lg:h-screen py-20" id="projects">
-            <div class="container mx-auto px-4">
+            <div class="mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center lg:text-start mb-8">
                     {t("Projects")}
                 </h2>
