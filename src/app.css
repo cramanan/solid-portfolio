@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: "Neue Montreal";
+    src: url("assets/fonts/NeueMontreal-Regular.woff");
+}
+
+@font-face {
+    font-family: "Neue Montreal";
+    font-weight: bold;
+    src: url("assets/fonts/NeueMontreal-Bold.woff");
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -7,7 +18,6 @@
     --color-primary-dark: #0b1215; */
 
     --animate-wave: wave 1s ease-in-out;
-    --animate-wave-initial: wave 1s ease-in-out;
 
     @keyframes wave {
         0% {
@@ -43,4 +53,5 @@
 
 :root {
     scroll-behavior: smooth;
+    font-family: "Neue Montreal";
 }
