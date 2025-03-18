@@ -6,9 +6,6 @@ import {
     createContext,
     createEffect,
     createResource,
-    createSignal,
-    onCleanup,
-    onMount,
     startTransition,
     useContext,
 } from "solid-js";
@@ -150,10 +147,10 @@ export const AppContextProvider: ParentComponent = (props) => {
     return (
         <MetaProvider>
             <AppContext.Provider value={state}>
-                <Title>{t("title")}</Title>
+                <Title>{t("Title")}</Title>
                 <Meta name="lang" lang={locale()} />
                 <Meta name="author" content="Cyril Ramananjaona" />
-                <Meta name="description" content={t("description")} />
+                <Meta name="description" content={t("Description")} />
                 <Meta
                     name="keywords"
                     content="portfolio, dev, HTML, CSS, JavaScript, JS"
