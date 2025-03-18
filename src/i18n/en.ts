@@ -1,7 +1,8 @@
 export const dict = {
-    title: "Cyril Ram | Full-Stack Developer",
-    description: "Cyril Ram's Portfolio.",
+    Title: "Cyril Ram · Full-Stack Developer",
+    Description: "Cyril Ram's Portfolio.",
     Home: "Home",
+    AboutMe: "About me",
     Skills: "Skills",
     Projects: "Projects",
     FullstackDev: "Full-Stack Developer",
@@ -13,5 +14,5 @@ export const dict = {
     Socials: "Socials",
     PageNotFound: "Page Not Found",
     ReturnHome: "Return Home",
-    copyrights: "All rights reserved",
+    Copyrights: "All rights reserved",
 };
