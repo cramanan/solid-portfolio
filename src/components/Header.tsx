@@ -8,6 +8,7 @@ import Phone from "lucide-solid/icons/phone";
 
 const navigation = [
     { name: "Home", href: "/#" },
+    { name: "AboutMe", href: "/#about" },
     { name: "Skills", href: "/#skills" },
     { name: "Projects", href: "/#projects" },
 ] as const;
@@ -36,15 +37,16 @@ export default function Header() {
                         {(item) => (
                             <a
                                 href={item.href}
-                                class="text-3xl leading-6 hover:underline"
+                                class="relative group text-2xl leading-6"
                             >
                                 {t(item.name)}
+                                <span class="absolute bottom-0 left-0 w-full h-[0.1em] bg-black opacity-0 transition-opacity duration-300 transform group-hover:opacity-100"></span>
                             </a>
                         )}
                     </For>
                 </nav>
 
-                <div class="hidden items-center lg:flex lg:flex-1 lg:justify-end lg:gap-3">
+                <div class="hidden items-center lg:flex lg:flex-1 lg:justify-end lg:gap-4">
                     <LocaleSelect />
                     <ThemeToggle />
                     <a
