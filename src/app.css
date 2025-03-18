@@ -2,13 +2,13 @@
 
 @font-face {
     font-family: "Neue Montreal";
-    src: url("assets/fonts/NeueMontreal-Regular.woff");
+    src: url("/assets/fonts/NeueMontreal-Regular.woff");
 }
 
 @font-face {
     font-family: "Neue Montreal";
     font-weight: bold;
-    src: url("assets/fonts/NeueMontreal-Bold.woff");
+    src: url("/assets/fonts/NeueMontreal-Bold.woff");
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
