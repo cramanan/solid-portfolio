@@ -9,12 +9,14 @@ export const ThemeToggle: VoidComponent = () => {
     const { isDark, setDark } = useAppState();
 
     return (
-        <button type="button" onClick={() => setDark(!isDark())}>
+        <button
+            type="button"
+            class="cursor-pointer"
+            onClick={() => setDark(!isDark())}
+        >
             <Show when={isDark()} fallback={<Moon />}>
                 <Sun />
             </Show>
-
-            <span class="text-xs sr-only"></span>
         </button>
     );
 };

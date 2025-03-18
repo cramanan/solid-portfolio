@@ -7,7 +7,7 @@ export default function LocaleSwitcher() {
         <div class="relative w-7 h-7">
             <Languages class="absolute w-7 h-7" />
             <select
-                class="bg-transparent outline-none appearance-none opacity-0 w-full"
+                class="bg-transparent outline-none appearance-none opacity-0 w-full cursor-pointer"
                 onChange={(e) => setLocale(e.currentTarget.value as Locale)}
             >
                 <option value="en" selected={locale() === "en"}>
