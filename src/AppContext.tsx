@@ -13,7 +13,7 @@ import { createStore } from "solid-js/store";
 import { Meta, MetaProvider, Title } from "@solidjs/meta";
 
 // fr dictionary is loaded by default
-import { dict as fr_dict } from "~/i18n/fr";
+import fr_dict from "~/i18n/fr.json";
 
 type RawDictionary = typeof fr_dict;
 
@@ -29,13 +29,11 @@ type DeepPartial<T> = T extends Record<string, unknown>
     ? { [K in keyof T]?: DeepPartial<T[K]> }
     : T;
 
-const raw_dict_map: Record<
-    Locale,
-    () => Promise<{ dict: DeepPartial<RawDictionary> }>
-> = {
-    fr: () => import("~/i18n/fr"),
-    en: () => import("~/i18n/en"),
-};
+const raw_dict_map: Record<Locale, () => Promise<DeepPartial<RawDictionary>>> =
+    {
+        fr: () => import("~/i18n/fr.json"),
+        en: () => import("~/i18n/en.json"),
+    };
 
 export type Dictionary = i18n.Flatten<RawDictionary>;
 
@@ -43,8 +41,7 @@ const fr_flat_dict: Dictionary = i18n.flatten(fr_dict);
 
 async function fetchDictionary(locale: Locale): Promise<Dictionary> {
     if (locale === "fr") return fr_flat_dict;
-
-    const { dict } = await raw_dict_map[locale]();
+    const dict = await raw_dict_map[locale]();
     const flat_dict = i18n.flatten(dict) as RawDictionary;
     return { ...fr_flat_dict, ...flat_dict };
 }
@@ -84,7 +81,7 @@ function deserialize(value: string): Settings {
 interface AppState {
     locale: () => Locale;
     setLocale(value: Locale): void;
-    t: i18n.Translator<Dictionary>;
+    translation: i18n.ChainedTranslator<Dictionary>;
 
     isDark: () => boolean;
     setDark(value: boolean): void;
@@ -123,13 +120,14 @@ export const AppContextProvider: ParentComponent = (props) => {
 
     const t = i18n.translator(dict);
 
+    const translation = i18n.chainedTranslator(dict(), t);
+
     const state: AppState = {
         locale,
         setLocale(value) {
             void startTransition(() => set("locale", value));
         },
-        t,
-
+        translation,
         isDark,
         setDark(value) {
             void startTransition(() => set("dark", value));
@@ -147,10 +145,10 @@ export const AppContextProvider: ParentComponent = (props) => {
     return (
         <MetaProvider>
             <AppContext.Provider value={state}>
-                <Title>{t("Title")}</Title>
+                <Title>{translation.title()}</Title>
                 <Meta name="lang" lang={locale()} />
                 <Meta name="author" content="Cyril Ramananjaona" />
-                <Meta name="description" content={t("Description")} />
+                <Meta name="description" content={translation.description()} />
                 <Meta
                     name="keywords"
                     content="portfolio, dev, HTML, CSS, JavaScript, JS"

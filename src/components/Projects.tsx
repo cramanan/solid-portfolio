@@ -31,12 +31,12 @@ const projects = [
 ];
 
 export default function Projects() {
-    const { t } = useAppState();
+    const { translation } = useAppState();
     return (
         <section class="lg:h-screen py-20" id="projects">
             <div class="mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center lg:text-start mb-8">
-                    {t("Projects")}
+                    {translation.headers.projects()}
                 </h2>
                 <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <For each={projects}>

@@ -7,15 +7,15 @@ import X from "lucide-solid/icons/x";
 import Phone from "lucide-solid/icons/phone";
 
 const navigation = [
-    { name: "Home", href: "/#" },
-    { name: "AboutMe", href: "/#about" },
-    { name: "Skills", href: "/#skills" },
-    { name: "Projects", href: "/#projects" },
+    { key: "home", href: "/#" },
+    { key: "about", href: "/#about" },
+    { key: "skills", href: "/#skills" },
+    { key: "projects", href: "/#projects" },
 ] as const;
 
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = createSignal(false);
-    const { t } = useAppState();
+    const { translation } = useAppState();
     return (
         <header class="fixed z-10 w-screen sm:saturate-100 sm:backdrop-blur-lg border-b [border-image:linear-gradient(90deg,#0000_30%,#c8c8c880_50%,#0000_70%)_700] select-none px-4 lg:px-20">
             <nav
@@ -39,7 +39,7 @@ export default function Header() {
                                 href={item.href}
                                 class="relative group text-2xl leading-6"
                             >
-                                {t(item.name)}
+                                {translation.headers[item.key]()}
                                 <span class="absolute bottom-0 left-0 w-full h-[0.1em] bg-black opacity-0 transition-opacity duration-300 transform group-hover:opacity-100"></span>
                             </a>
                         )}
@@ -55,7 +55,7 @@ export default function Header() {
                         href="/#contact"
                     >
                         <Phone class="h-6 w-6" width={24} />
-                        {t("ContactMe")}
+                        {translation.headers.contact()}
                     </a>
                 </div>
             </nav>
@@ -95,7 +95,7 @@ export default function Header() {
                                             href={item.href}
                                             class="block rounded-lg px-3 py-2 text-base leading-7"
                                         >
-                                            {t(item.name)}
+                                            {translation.headers[item.key]()}
                                         </a>
                                     )}
                                 </For>
@@ -107,7 +107,7 @@ export default function Header() {
                                     onClick={() => setMobileMenuOpen(false)}
                                     href="/#contact"
                                 >
-                                    {t("ContactMe")}
+                                    {translation.headers.contact()}
                                 </a>
                             </div>
                         </div>

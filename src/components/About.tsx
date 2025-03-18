@@ -4,17 +4,17 @@ import Gauge from "./icons/Gauge";
 import { useAppState } from "~/AppContext";
 
 const cards = [
-    { Icon: Bullseye, label: "Precise" },
-    { Icon: Gauge, label: "Efficient" },
+    { Icon: Bullseye, label: "precise" },
+    { Icon: Gauge, label: "efficient" },
 ] as const;
 
 export default function About() {
-    const { t } = useAppState();
+    const { translation } = useAppState();
     return (
         <section id="about" class="py-20 px-4 lg:h-screen">
             <div class="mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center lg:text-start mb-8">
-                    {t("AboutMe")}
+                    {translation.headers.about()}
                 </h2>
                 <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -30,7 +30,7 @@ export default function About() {
                                 <div class="flex items-center gap-2 justify-center m-1.5">
                                     <item.Icon width={50} />
                                     <h1 class="text-3xl font-semibold">
-                                        {t(item.label)}
+                                        {translation[item.label]()}
                                     </h1>
                                 </div>
                                 <p>

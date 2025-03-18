@@ -4,7 +4,7 @@ import FileUser from "lucide-solid/icons/file-user";
 import wavingHand from "../assets/images/waving-hand.png";
 
 export default function HeroBanner() {
-    const { t } = useAppState();
+    const { translation } = useAppState();
     return (
         <section class="px-4 py-11 lg:flex lg:h-screen lg:items-center lg:px-20">
             <div class="flex flex-col-reverse items-center lg:flex-row w-full lg:justify-between">
@@ -20,7 +20,7 @@ export default function HeroBanner() {
                                 class="w-10 lg:h-16 lg:w-16 hover:animate-wave select-none"
                             />
                         </div>
-                        <h2>{t("FullstackDev")}</h2>
+                        <h2>{translation.fullstackDev()}</h2>
                     </div>
                     <div class="mt-3 flex gap-4 justify-center sm:justify-start">
                         <a
@@ -29,7 +29,7 @@ export default function HeroBanner() {
                             class="flex items-center gap-2 border-3 rounded-full px-2 lg:px-4 lg:py-1 lg:text-2xl"
                         >
                             <FileUser size={30} />
-                            {t("Resume")}
+                            {translation.resume()}
                         </a>
                         <a href="https://github.com/cramanan" target="_blank">
                             <Github width={50} />

@@ -1,0 +1,20 @@
+{
+    "title": "Cyril Ram · Développeur Full-Stack",
+    "description": "Portfolio de Cyril Ram.",
+    "headers": {
+        "home": "Accueil",
+        "about": "Qui suis-je ?",
+        "skills": "Compétences",
+        "projects": "Projets",
+        "contact": "Me contacter"
+    },
+    "fullstackDev": "Développeur Full-Stack",
+    "resume": "CV",
+    "precise": "Précis",
+    "efficient": "Efficace",
+    "informations": "Informations personelles",
+    "socials": "Mes réseaux",
+    "pageNotFound": "Page Introuvable",
+    "returnHome": "Retour à l'Accueil",
+    "copyrights": "Tous droits réservés"
+}
