@@ -6,7 +6,7 @@ import React from "./icons/React";
 import Solid from "./icons/Solid";
 import TypeScript from "./icons/TypeScript";
 import Tauri from "./icons/Tauri";
-import Wasm from "./icons/WASM";
+import Wasm from "./icons/Wasm";
 
 function Bar() {
     return <>Bar</>;

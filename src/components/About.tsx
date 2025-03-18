@@ -4,8 +4,8 @@ import Gauge from "./icons/Gauge";
 import { useAppState } from "~/AppContext";
 
 const cards = [
-    { Icon: Bullseye, label: "precise" },
-    { Icon: Gauge, label: "efficient" },
+    { Icon: Bullseye, label: "precision" },
+    { Icon: Gauge, label: "efficiency" },
 ] as const;
 
 export default function About() {
@@ -16,13 +16,6 @@ export default function About() {
                 <h2 class="text-4xl font-bold text-center lg:text-start mb-8">
                     {translation.headers.about()}
                 </h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Tenetur tempore ea quis suscipit repudiandae sed molestias
-                    repellendus consequatur veniam commodi ipsum, ratione
-                    consectetur beatae tempora. Architecto reprehenderit dolores
-                    consectetur quas!
-                </p>
                 <ul class="flex flex-col lg:flex-row lg:justify-evenly py-5">
                     <For each={cards}>
                         {(item) => (
@@ -30,15 +23,13 @@ export default function About() {
                                 <div class="flex items-center gap-2 justify-center m-1.5">
                                     <item.Icon width={50} />
                                     <h1 class="text-3xl font-semibold">
-                                        {translation[item.label]()}
+                                        {translation.skills[item.label].title()}
                                     </h1>
                                 </div>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur,
-                                    adipisicing elit. Eos eum illum illo magnam
-                                    in aspernatur animi, earum itaque
-                                    repudiandae ducimus ullam saepe iure ut
-                                    laborum adipisci quidem at maiores ex?
+                                    {translation.skills[
+                                        item.label
+                                    ].description()}
                                 </p>
                             </li>
                         )}

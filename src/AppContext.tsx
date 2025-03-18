@@ -124,14 +124,10 @@ export const AppContextProvider: ParentComponent = (props) => {
 
     const state: AppState = {
         locale,
-        setLocale(value) {
-            void startTransition(() => set("locale", value));
-        },
+        setLocale: (value) => startTransition(() => set("locale", value)),
         translation,
         isDark,
-        setDark(value) {
-            void startTransition(() => set("dark", value));
-        },
+        setDark: (value) => startTransition(() => set("dark", value)),
     };
 
     createEffect(() => (document.documentElement.lang = settings.locale));

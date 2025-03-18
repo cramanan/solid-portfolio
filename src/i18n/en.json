@@ -10,8 +10,16 @@
     },
     "fullstackDev": "Full-Stack Developer",
     "resume": "Resume",
-    "precision": "Precision",
-    "efficiency": "Efficiency",
+    "skills": {
+        "precision": {
+            "title": "Precise",
+            "description": "[...]"
+        },
+        "efficiency": {
+            "title": "Efficient",
+            "description": "[...]"
+        }
+    },
     "informations": "Personal informations",
     "socials": "Socials",
     "pageNotFound": "Page Not Found",
