@@ -6,7 +6,7 @@ import wavingHand from "../assets/images/waving-hand.png";
 export default function HeroBanner() {
     const { translation } = useAppState();
     return (
-        <section class="px-4 py-11 lg:flex lg:h-screen lg:items-center lg:px-20">
+        <section class="px-4 py-12 lg:flex lg:h-screen lg:items-center lg:px-20">
             <div class="flex flex-col-reverse items-center lg:flex-row w-full lg:justify-between">
                 <div class="text-center sm:text-left">
                     <div class="text-3xl lg:text-7xl font-bold">
@@ -17,7 +17,7 @@ export default function HeroBanner() {
                                 alt="A waving hand"
                                 width={64}
                                 height={64}
-                                class="w-10 lg:h-16 lg:w-16 hover:animate-wave select-none"
+                                class="w-10 lg:h-16 lg:w-16 lg:hover:animate-wave select-none"
                             />
                         </div>
                         <h2>{translation.fullstackDev()}</h2>

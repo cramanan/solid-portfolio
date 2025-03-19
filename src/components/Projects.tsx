@@ -33,9 +33,9 @@ const projects = [
 export default function Projects() {
     const { translation } = useAppState();
     return (
-        <section class="lg:h-screen py-20" id="projects">
+        <section class="lg:h-screen px-4 py-20" id="projects">
             <div class="mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center lg:text-start mb-8">
+                <h2 class="text-5xl font-bold text-center lg:text-start mb-8">
                     {translation.headers.projects()}
                 </h2>
                 <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -49,7 +49,10 @@ export default function Projects() {
                                     <div class="flex gap-3">
                                         <For each={project.techs}>
                                             {(Component) => (
-                                                <Component width={40} />
+                                                <Component
+                                                    class="w-7"
+                                                    width={40}
+                                                />
                                             )}
                                         </For>
                                     </div>

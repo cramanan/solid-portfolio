@@ -30,10 +30,6 @@ function Tabs() {
     );
 }
 
-function Baz() {
-    return <>Baz</>;
-}
-
 const icons = [
     {
         Component: Tabs,
@@ -51,18 +47,14 @@ const icons = [
             { title: "WebAssembly", Icon: Wasm },
         ],
     },
-    {
-        Component: Baz,
-        icons: [{ title: "Tauri", Icon: Tauri }],
-    },
 ];
 
 export default function Skills() {
     const { translation } = useAppState();
     return (
-        <section class="lg:h-screen py-20" id="skills">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center lg:text-start mb-8">
+        <section class="lg:h-screen py-20 px-4" id="skills">
+            <div class="mx-auto px-4">
+                <h2 class="text-5xl font-bold text-center lg:text-start mb-8">
                     {translation.headers.skills()}
                 </h2>
                 <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-7">
