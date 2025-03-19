@@ -8,9 +8,9 @@ import Phone from "lucide-solid/icons/phone";
 
 const navigation = [
     { key: "home", href: "/#" },
-    { key: "about", href: "/#about" },
-    { key: "skills", href: "/#skills" },
-    { key: "projects", href: "/#projects" },
+    // { key: "about", href: "/#about" },
+    // { key: "skills", href: "/#skills" },
+    // { key: "projects", href: "/#projects" },
 ] as const;
 
 export default function Header() {
@@ -18,7 +18,7 @@ export default function Header() {
     const closeMenu = () => setMobileMenuOpen(false);
     const { translation } = useAppState();
     return (
-        <header class="fixed z-10 w-screen sm:saturate-100 sm:backdrop-blur-lg border-b [border-image:linear-gradient(90deg,#0000_30%,#c8c8c880_50%,#0000_70%)_700] select-none px-4 lg:px-20">
+        <header class="fixed z-10 w-screen saturate-100 backdrop-blur-lg border-b [border-image:linear-gradient(90deg,#0000_30%,#c8c8c880_50%,#0000_70%)_700] select-none px-4 lg:px-20">
             <nav
                 class="flex items-center lg:justify-between py-3"
                 aria-label="Global"
@@ -55,20 +55,20 @@ export default function Header() {
                 <div class="hidden items-center lg:flex lg:flex-1 lg:justify-end lg:gap-4">
                     <LocaleSelect />
                     <ThemeToggle />
-                    <a
+                    {/* <a
                         class="flex items-center gap-2 rounded-lg p-1 outline-2 text-lg font-medium px-2 py-1"
                         href="/#contact"
                     >
                         <Phone class="h-6 w-6" width={24} />
                         {translation.headers.contact()}
-                    </a>
+                    </a> */}
                 </div>
             </nav>
             <Show when={mobileMenuOpen()}>
                 <div
                     role="dialog"
                     aria-modal="true"
-                    class="fixed inset-y-0 right-0 z-20 w-full p-3 backdrop-blur-sm sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+                    class="fixed inset-y-0 right-0 z-20 w-full h-screen p-3 saturate-100 backdrop-blur-sm lg:hidden"
                 >
                     <a href="/" class="-m-1.5 p-1.5" onClick={closeMenu}>
                         <span class="text-2xl font-bold">Cyril Ram.</span>
@@ -91,13 +91,13 @@ export default function Header() {
                             <div class="flex gap-3 py-6">
                                 <LocaleSelect />
                                 <ThemeToggle />
-                                <a
+                                {/* <a
                                     class="flex items-center gap-2 rounded-lg p-1 outline-2 text-lg font-medium px-2 py-1"
                                     href="/#contact"
                                 >
                                     <Phone class="h-6 w-6" width={24} />
                                     {translation.headers.contact()}
-                                </a>
+                                </a> */}
                             </div>
                         </div>
                     </div>

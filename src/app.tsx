@@ -11,7 +11,7 @@ function RootLayout(props: ParentProps) {
         <AppContextProvider>
             <Header />
             {props.children}
-            <Footer />
+            {/* <Footer /> */}
         </AppContextProvider>
     );
 }
