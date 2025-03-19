@@ -31,7 +31,7 @@ type DeepPartial<T> = T extends Record<string, unknown>
 
 const raw_dict_map: Record<Locale, () => Promise<DeepPartial<RawDictionary>>> =
     {
-        fr: () => import("~/i18n/fr.json"),
+        fr: async () => fr_dict,
         en: () => import("~/i18n/en.json"),
     };
 
@@ -147,7 +147,7 @@ export const AppContextProvider: ParentComponent = (props) => {
                 <Meta name="description" content={translation.description()} />
                 <Meta
                     name="keywords"
-                    content="portfolio, dev, HTML, CSS, JavaScript, JS"
+                    content="portfolio, dev, SolidJS, React, Rust, Golang, Vite, SQL, SQLite, HTML, CSS, JavaScript, JS"
                 />
                 <Meta name="generator" content="vite" />
 
