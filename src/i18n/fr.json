@@ -10,10 +10,6 @@
     },
     "fullstackDev": "Développeur Full-Stack",
     "resume": "CV",
-    "skills": {
-        "precision": { "title": "Précis", "description": "[...]" },
-        "efficiency": { "title": "Efficace", "description": "[...]" }
-    },
     "informations": "Informations personelles",
     "socials": "Mes réseaux",
     "pageNotFound": "Page Introuvable",
