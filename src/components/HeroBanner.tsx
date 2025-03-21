@@ -6,7 +6,7 @@ import wavingHand from "../assets/images/waving-hand.png";
 export default function HeroBanner() {
     const { translation } = useAppState();
     return (
-        <section class="px-4 py-11 lg:flex lg:h-screen lg:items-center h-screen lg:px-20">
+        <section class="lg:p-20 lg:flex lg:h-screen lg:items-center h-screen lg:px-20">
             <div class="flex flex-col-reverse justify-center items-center lg:flex-row w-full lg:justify-between h-full">
                 <div class="text-center sm:text-left">
                     <div class="text-3xl lg:text-7xl font-bold">
@@ -37,10 +37,11 @@ export default function HeroBanner() {
                     </div>
                 </div>
                 <img
-                    src="/assets/images/picture.webp"
+                    src="/assets/images/cyril-540x540.webp"
+                    srcset=""
                     alt="Picture of Cyril Ram."
                     fetchpriority="high"
-                    class="mb-4 h-52 w-52 sm:h-64 sm:w-64 lg:h-[500px] lg:w-[500px] border rounded-full"
+                    class="mb-4 h-52 w-52 sm:h-64 sm:w-64 lg:h-[500px] lg:w-[500px] m-10 border rounded-full"
                 />
             </div>
         </section>

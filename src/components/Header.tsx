@@ -8,9 +8,9 @@ import Phone from "lucide-solid/icons/phone";
 
 const navigation = [
     { key: "home", href: "/#" },
-    // { key: "about", href: "/#about" },
-    // { key: "skills", href: "/#skills" },
-    // { key: "projects", href: "/#projects" },
+    { key: "about", href: "/#about" },
+    { key: "skills", href: "/#skills" },
+    { key: "projects", href: "/#projects" },
 ] as const;
 
 export default function Header() {
@@ -20,24 +20,9 @@ export default function Header() {
     return (
         <header class="fixed z-10 w-screen saturate-100 backdrop-blur-lg border-b [border-image:linear-gradient(90deg,#0000_30%,#c8c8c880_50%,#0000_70%)_700] select-none px-4 lg:px-20">
             <nav
-                class="flex items-center lg:justify-between py-3"
+                class="flex items-center justify-end lg:justify-between py-3"
                 aria-label="Global"
             >
-                <div class="flex w-full justify-end lg:hidden">
-                    <button
-                        type="button"
-                        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 z-30"
-                        onClick={() => setMobileMenuOpen((prev) => !prev)}
-                    >
-                        <span class="sr-only">Open main menu</span>
-                        <Show
-                            when={!mobileMenuOpen()}
-                            fallback={<X class="h-6 w-6" size={24} />}
-                        >
-                            <Menu class="h-6 w-6" size={24} />
-                        </Show>
-                    </button>
-                </div>
                 <nav class="hidden lg:flex lg:gap-x-12">
                     <For each={navigation}>
                         {(item) => (
@@ -51,17 +36,29 @@ export default function Header() {
                         )}
                     </For>
                 </nav>
-
-                <div class="hidden items-center lg:flex lg:flex-1 lg:justify-end lg:gap-4">
+                <div class="items-center flex justify-end gap-4 z-30">
                     <LocaleSelect />
                     <ThemeToggle />
-                    {/* <a
-                        class="flex items-center gap-2 rounded-lg p-1 outline-2 text-lg font-medium px-2 py-1"
+                    <a
+                        class="hidden lg:flex items-center gap-2 rounded-lg p-1 outline-2 text-lg font-medium px-2 py-1"
                         href="/#contact"
                     >
                         <Phone class="h-6 w-6" width={24} />
                         {translation.headers.contact()}
-                    </a> */}
+                    </a>
+                    <button
+                        type="button"
+                        class="lg:hidden -m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
+                        onClick={() => setMobileMenuOpen((prev) => !prev)}
+                    >
+                        <span class="sr-only">Open main menu</span>
+                        <Show
+                            when={!mobileMenuOpen()}
+                            fallback={<X class="h-6 w-6" size={24} />}
+                        >
+                            <Menu class="h-6 w-6" size={24} />
+                        </Show>
+                    </button>
                 </div>
             </nav>
             <Show when={mobileMenuOpen()}>
@@ -75,7 +72,7 @@ export default function Header() {
                     </a>
                     <div class="mt-6 flow-root">
                         <div class="-my-6 divide-y divide-gray-500/10">
-                            <div class="py-6">
+                            <div class="py-2">
                                 <For each={navigation}>
                                     {(item) => (
                                         <a
@@ -87,17 +84,13 @@ export default function Header() {
                                         </a>
                                     )}
                                 </For>
-                            </div>
-                            <div class="flex gap-3 py-6">
-                                <LocaleSelect />
-                                <ThemeToggle />
-                                {/* <a
-                                    class="flex items-center gap-2 rounded-lg p-1 outline-2 text-lg font-medium px-2 py-1"
+                                <a
+                                    onClick={closeMenu}
                                     href="/#contact"
+                                    class="block rounded-lg px-3 py-2 text-2xl leading-7 "
                                 >
-                                    <Phone class="h-6 w-6" width={24} />
                                     {translation.headers.contact()}
-                                </a> */}
+                                </a>
                             </div>
                         </div>
                     </div>

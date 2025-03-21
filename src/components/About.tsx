@@ -1,17 +1,20 @@
 import { For } from "solid-js";
-import Bullseye from "./icons/Bullseye";
-import Gauge from "./icons/Gauge";
 import { useAppState } from "~/AppContext";
 
 export default function About() {
     const { translation } = useAppState();
     return (
-        <section id="about" class="lg:h-screen py-20 px-4">
-            <div class="mx-auto px-4">
-                <h2 class="text-5xl font-bold text-center lg:text-start mb-8">
-                    {translation.headers.about()}
-                </h2>
-                <p>
+        <section id="about" class="flex flex-col pt-20 lg:h-screen">
+            <h2 class="text-5xl font-bold text-center lg:text-start">
+                <a href="/#about">{translation.headers.about()}</a>
+            </h2>
+            <div class="flex flex-col items-center">
+                <img
+                    alt=""
+                    src="/assets/images/presentation-800x800.webp"
+                    class="w-52 m-6"
+                />
+                <p class="px-10">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                     Architecto dicta itaque modi magni. Nemo quaerat harum
                     tenetur quidem. Id ad hic et eligendi quisquam, quasi

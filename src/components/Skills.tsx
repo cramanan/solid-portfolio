@@ -52,39 +52,36 @@ const icons = [
 export default function Skills() {
     const { translation } = useAppState();
     return (
-        <section class="lg:h-screen py-20 px-4" id="skills">
-            <div class="mx-auto px-4">
-                <h2 class="text-5xl font-bold text-center lg:text-start mb-8">
-                    {translation.headers.skills()}
-                </h2>
-                <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-7">
-                    <For each={icons}>
-                        {(item) => (
-                            <li class="overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 p-4">
-                                <div class="h-40 p-3">
-                                    <item.Component />
-                                </div>
-                                <h2 class="text-2xl font-semibold">Title</h2>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Alias iste voluptates
-                                    ducimus.
-                                </p>
-                                <div class="flex items-center justify-evenly mt-4">
-                                    <For each={item.icons}>
-                                        {({ title, Icon }) => (
-                                            <div class="flex flex-col items-center justify-center">
-                                                <Icon width={44} height={44} />
-                                                <div>{title}</div>
-                                            </div>
-                                        )}
-                                    </For>
-                                </div>
-                            </li>
-                        )}
-                    </For>
-                </ul>
-            </div>
+        <section class="pt-20 lg:h-screen" id="skills">
+            <h2 class="text-5xl font-bold text-center lg:text-start">
+                <a href="/#skills">{translation.headers.skills()}</a>
+            </h2>
+            <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-7">
+                <For each={icons}>
+                    {(item) => (
+                        <li class="overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 p-4">
+                            <div class="h-40 p-3">
+                                <item.Component />
+                            </div>
+                            <h2 class="text-2xl font-semibold">Title</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Alias iste voluptates ducimus.
+                            </p>
+                            <div class="flex items-center justify-evenly mt-4">
+                                <For each={item.icons}>
+                                    {({ title, Icon }) => (
+                                        <div class="flex flex-col items-center justify-center">
+                                            <Icon width={44} height={44} />
+                                            <div>{title}</div>
+                                        </div>
+                                    )}
+                                </For>
+                            </div>
+                        </li>
+                    )}
+                </For>
+            </ul>
         </section>
     );
 }
