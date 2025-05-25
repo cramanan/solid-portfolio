@@ -1,5 +1,5 @@
 import HeroBanner from "~/components/HeroBanner";
-import Skills from "~/components/Skills";
+import SkillSet from "~/components/SkillSet";
 import Contact from "~/components/Contact";
 import Projects from "~/components/Projects";
 import About from "~/components/About";
@@ -9,7 +9,7 @@ export default function Home() {
         <>
             <HeroBanner />
             <About />
-            <Skills />
+            <SkillSet />
             <Projects />
             <Contact />
         </>

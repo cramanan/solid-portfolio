@@ -14,12 +14,7 @@ export default function About() {
                     src="/assets/images/presentation-800x800.webp"
                     class="w-52 m-6"
                 />
-                <p class="px-10">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Architecto dicta itaque modi magni. Nemo quaerat harum
-                    tenetur quidem. Id ad hic et eligendi quisquam, quasi
-                    deleniti repudiandae maiores modi perspiciatis!
-                </p>
+                <p class="px-10">{translation.about.paragraph()}</p>
             </div>
         </section>
     );

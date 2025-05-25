@@ -4,12 +4,15 @@
     "headers": {
         "home": "Home",
         "about": "About me",
-        "skills": "Skills",
+        "skillSet": "Skill Set",
         "projects": "Projects",
         "contact": "Contact me"
     },
     "fullstackDev": "Full-Stack Developer",
     "resume": "Resume",
+    "about": {
+        "paragraph": "[...]"
+    },
     "informations": "Personal informations",
     "socials": "Socials",
     "pageNotFound": "Page Not Found",

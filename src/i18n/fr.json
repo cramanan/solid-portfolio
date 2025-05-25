@@ -4,12 +4,15 @@
     "headers": {
         "home": "Accueil",
         "about": "Qui suis-je ?",
-        "skills": "Compétences",
+        "skillSet": "Compétences",
         "projects": "Projets",
         "contact": "Me contacter"
     },
     "fullstackDev": "Développeur Full-Stack",
     "resume": "CV",
+    "about": {
+        "paragraph": "[...]"
+    },
     "informations": "Informations personelles",
     "socials": "Mes réseaux",
     "pageNotFound": "Page Introuvable",

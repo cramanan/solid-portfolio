@@ -9,7 +9,7 @@ import Phone from "lucide-solid/icons/phone";
 const navigation = [
     { key: "home", href: "/#" },
     { key: "about", href: "/#about" },
-    { key: "skills", href: "/#skills" },
+    { key: "skillSet", href: "/#skill-set" },
     { key: "projects", href: "/#projects" },
 ] as const;
 
@@ -28,10 +28,9 @@ export default function Header() {
                         {(item) => (
                             <a
                                 href={item.href}
-                                class="relative group text-2xl leading-6"
+                                class="group text-2xl leading-6"
                             >
                                 {translation.headers[item.key]()}
-                                <span class="absolute bottom-0 left-0 w-full h-[0.1em] bg-black opacity-0 transition-opacity duration-300 transform group-hover:opacity-100"></span>
                             </a>
                         )}
                     </For>
@@ -72,13 +71,13 @@ export default function Header() {
                     </a>
                     <div class="mt-6 flow-root">
                         <div class="-my-6 divide-y divide-gray-500/10">
-                            <div class="py-2">
+                            <div class="flex flex-col gap-2 pt-2">
                                 <For each={navigation}>
                                     {(item) => (
                                         <a
                                             onClick={closeMenu}
                                             href={item.href}
-                                            class="block rounded-lg px-3 py-2 text-2xl leading-7 "
+                                            class="text-2xl"
                                         >
                                             {translation.headers[item.key]()}
                                         </a>
@@ -87,7 +86,7 @@ export default function Header() {
                                 <a
                                     onClick={closeMenu}
                                     href="/#contact"
-                                    class="block rounded-lg px-3 py-2 text-2xl leading-7 "
+                                    class="text-2xl"
                                 >
                                     {translation.headers.contact()}
                                 </a>
