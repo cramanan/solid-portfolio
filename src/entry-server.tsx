@@ -12,7 +12,7 @@ export default createHandler(() => (
                         content="width=device-width, initial-scale=1, minimum-scale=1"
                     />
                     <link rel="icon" href="/favicon.ico" />
-                    <script src="/preload.js"></script>
+                    <script src="/preload.js" />
                     <link
                         rel="preload"
                         href="/assets/fonts/NeueMontreal-Bold.woff"

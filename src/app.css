@@ -1,56 +1,582 @@
 @import "tailwindcss";
 
 @font-face {
-    font-family: "Neue Montreal";
-    src: url("/assets/fonts/NeueMontreal-Regular.woff");
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 100;
+  src: url("/assets/fonts/SF-Pro-Display-Ultralight.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
 }
 
 @font-face {
-    font-family: "Neue Montreal";
-    font-weight: bold;
-    src: url("/assets/fonts/NeueMontreal-Bold.woff");
+  font-family: "SF Pro Display";
+  font-style: italic;
+  font-weight: 100;
+  src: url("/assets/fonts/SF-Pro-Display-UltralightItalic.otf")
+    format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display 100";
+  src: url("/assets/fonts/SF-Pro-Display-Ultralight.otf");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 200;
+  src: url("/assets/fonts/SF-Pro-Display-Thin.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: italic;
+  font-weight: 200;
+  src: url("/assets/fonts/SF-Pro-Display-ThinItalic.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display 200";
+  src: url("/assets/fonts/SF-Pro-Display-Thin.otf");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/assets/fonts/SF-Pro-Display-Light.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: italic;
+  font-weight: 300;
+  src: url("/assets/fonts/SF-Pro-Display-LightItalic.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display 300";
+  src: url("/assets/fonts/SF-Pro-Display-Light.otf");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: italic;
+  font-weight: 400;
+  src: url("/assets/fonts/SF-Pro-Display-RegularItalic.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/fonts/SF-Pro-Display-Medium.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: italic;
+  font-weight: 500;
+  src: url("/assets/fonts/SF-Pro-Display-MediumItalic.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display 500";
+  src: url("/assets/fonts/SF-Pro-Display-Medium.otf");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/assets/fonts/SF-Pro-Display-Semibold.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: italic;
+  font-weight: 600;
+  src: url("/assets/fonts/SF-Pro-Display-SemiboldItalic.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display 600";
+  src: url("/assets/fonts/SF-Pro-Display-Semibold.otf");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/fonts/SF-Pro-Display-Bold.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: italic;
+  font-weight: 700;
+  src: url("/assets/fonts/SF-Pro-Display-BoldItalic.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display 700";
+  src: url("/assets/fonts/SF-Pro-Display-Bold.otf");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 800;
+  src: url("/assets/fonts/SF-Pro-Display-Heavy.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: italic;
+  font-weight: 800;
+  src: url("/assets/fonts/SF-Pro-Display-HeavyItalic.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display 800";
+  src: url("/assets/fonts/SF-Pro-Display-Heavy.otf");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/assets/fonts/SF-Pro-Display-black.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: italic;
+  font-weight: 900;
+  src: url("/assets/fonts/SF-Pro-Display-blackItalic.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display 900";
+  src: url("/assets/fonts/SF-Pro-Display-black.otf");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/SF-Pro-Display-Regular.otf");
+  src: url("/assets/fonts/SF-Pro-Display-Regular.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 100;
+  src: url("/assets/fonts/SF-Pro-Text-Ultralight.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: italic;
+  font-weight: 100;
+  src: url("/assets/fonts/SF-Pro-Text-UltralightItalic.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text 100";
+  src: url("/assets/fonts/SF-Pro-Text-Ultralight.otf");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 200;
+  src: url("/assets/fonts/SF-Pro-Text-Thin.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: italic;
+  font-weight: 200;
+  src: url("/assets/fonts/SF-Pro-Text-ThinItalic.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text 200";
+  src: url("/assets/fonts/SF-Pro-Text-Thin.otf");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/assets/fonts/SF-Pro-Text-Light.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: italic;
+  font-weight: 300;
+  src: url("/assets/fonts/SF-Pro-Text-LightItalic.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text 300";
+  src: url("/assets/fonts/SF-Pro-Text-Light.otf");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: italic;
+  font-weight: 400;
+  src: url("/assets/fonts/SF-Pro-Text-RegularItalic.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/fonts/SF-Pro-Text-Medium.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: italic;
+  font-weight: 500;
+  src: url("/assets/fonts/SF-Pro-Text-MediumItalic.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text 500";
+  src: url("/assets/fonts/SF-Pro-Text-Medium.otf");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/assets/fonts/SF-Pro-Text-Semibold.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: italic;
+  font-weight: 600;
+  src: url("/assets/fonts/SF-Pro-Text-SemiboldItalic.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text 600";
+  src: url("/assets/fonts/SF-Pro-Text-Semibold.otf");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/fonts/SF-Pro-Text-Bold.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: italic;
+  font-weight: 700;
+  src: url("/assets/fonts/SF-Pro-Text-BoldItalic.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text 700";
+  src: url("/assets/fonts/SF-Pro-Text-Bold.otf");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 800;
+  src: url("/assets/fonts/SF-Pro-Text-Heavy.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: italic;
+  font-weight: 800;
+  src: url("/assets/fonts/SF-Pro-Text-HeavyItalic.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text 800";
+  src: url("/assets/fonts/SF-Pro-Text-Heavy.otf");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/assets/fonts/SF-Pro-Text-Black.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: italic;
+  font-weight: 900;
+  src: url("/assets/fonts/SF-Pro-Text-BlackItalic.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text 900";
+  src: url("/assets/fonts/SF-Pro-Text-Black.otf");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/SF-Pro-Text-Regular.otf");
+  src: url("/assets/fonts/SF-Pro-Text-Regular.otf") format("opentype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-    /* --color-primary-light: #f8fbf8;
+  /* --color-primary-Light: #f8fbf8;
     --color-primary-dark: #0b1215; */
+  --font-primary: "SF Pro Display", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-secondary: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
 
-    --animate-wave: wave 1s ease-in-out;
-    @keyframes wave {
-        0% {
-            transform: rotate(0deg);
-        }
-        15% {
-            transform: rotate(14deg);
-        }
-        30% {
-            transform: rotate(-8deg);
-        }
-        40% {
-            transform: rotate(14deg);
-        }
-        50% {
-            transform: rotate(-4deg);
-        }
-        60% {
-            transform: rotate(10deg);
-        }
-        70% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(0deg);
-        }
+  --animate-wave: wave 1s ease-in-out infinite 2s;
+  @keyframes wave {
+    0% {
+      transform: rotate(0deg);
     }
+    15% {
+      transform: rotate(14deg);
+    }
+    30% {
+      transform: rotate(-8deg);
+    }
+    40% {
+      transform: rotate(14deg);
+    }
+    50% {
+      transform: rotate(-4deg);
+    }
+    60% {
+      transform: rotate(10deg);
+    }
+    70% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+@layer base {
+  body {
+    font-family: var(--font-primary);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .dark a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-secondary);
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 .dark {
-    color-scheme: dark;
+  color-scheme: dark;
 }
 
 :root {
-    scroll-behavior: smooth;
-    font-family: "Neue Montreal";
+  scroll-behavior: smooth;
+}
+
+/* Marquee styles */
+.marquee {
+  --gap: 1rem;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+}
+
+.marquee__content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
+  animation: scroll 20s linear infinite;
+}
+
+/* Pause on hover */
+.marquee__hover_pause:hover .marquee__content {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+/* Pause animation when reduced-motion is set */
+@media (prefers-reduced-motion: reduce) {
+  .marquee__content {
+    animation-play-state: paused !important;
+  }
+}
+
+/* Enable animation */
+.enable-animation .marquee__content {
+  animation: scroll 10s linear infinite;
+}
+
+/* Reverse animation */
+.marquee__reverse .marquee__content {
+  animation-direction: reverse;
+}
+
+/* Pause on hover */
+.marquee--hover-pause:hover .marquee__content {
+  animation-play-state: paused;
 }
