@@ -62,38 +62,40 @@ export default function Skillset() {
       <h2 class="text-5xl font-bold text-center lg:text-start">
         <a href="/#skill-set">{translation.headers.skillSet()}</a>
       </h2>
-      <div class="mt-8 space-y-8">
-        <For each={marquees}>
-          {(marquee, index) => (
-            <div
-              class={cn(
-                "marquee marquee__hover_pause",
-                index() !== 1 && "marquee__reverse"
-              )}
-            >
-              <div class="marquee__content">
-                <For each={marquee}>
-                  {(item) => (
-                    <div class="flex flex-col items-center justify-center gap-2 px-4">
-                      <item.Icon height={50} />
-                      <h2 class="font-semibold">{item.label}</h2>
-                    </div>
-                  )}
-                </For>
+      <div class="flex h-full w-full flex-col items-center justify-center">
+        <div class="mt-8 space-y-8">
+          <For each={marquees}>
+            {(marquee, index) => (
+              <div
+                class={cn(
+                  "marquee marquee__hover_pause",
+                  index() !== 1 && "marquee__reverse"
+                )}
+              >
+                <div class="marquee__content">
+                  <For each={marquee}>
+                    {(item) => (
+                      <div class="flex flex-col items-center justify-center gap-2 px-4">
+                        <item.Icon height={50} />
+                        <h2 class="font-semibold">{item.label}</h2>
+                      </div>
+                    )}
+                  </For>
+                </div>
+                <div class="marquee__content" aria-hidden>
+                  <For each={marquee}>
+                    {(item) => (
+                      <div class="flex flex-col items-center justify-center gap-2 px-4">
+                        <item.Icon height={50} />
+                        <h2 class="font-semibold">{item.label}</h2>
+                      </div>
+                    )}
+                  </For>
+                </div>
               </div>
-              <div class="marquee__content" aria-hidden>
-                <For each={marquee}>
-                  {(item) => (
-                    <div class="flex flex-col items-center justify-center gap-2 px-4">
-                      <item.Icon height={50} />
-                      <h2 class="font-semibold">{item.label}</h2>
-                    </div>
-                  )}
-                </For>
-              </div>
-            </div>
-          )}
-        </For>
+            )}
+          </For>
+        </div>
       </div>
     </section>
   );
